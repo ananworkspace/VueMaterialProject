@@ -25,18 +25,19 @@
     <el-container>
       <el-aside width="200px">
         <el-menu
-          default-active="2"
+          :default-active="$route.path"
           class="el-menu-vertical-demo"
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b"
+          :router="true"
         >
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-menu"></i>
               <span>用户管理</span>
             </template>
-              <el-menu-item index="1-4-1">
+              <el-menu-item index="/user">
                   <i class="el-icon-menu"></i>
                   <span>用户列表</span>
               </el-menu-item>
@@ -96,7 +97,7 @@
         </el-menu>
       </el-aside>
       <el-main>
-          
+          <router-view></router-view>
       </el-main>
     </el-container>
   </el-container>
@@ -124,7 +125,7 @@
   text-decoration: none;
 }
 .el-aside,.el-container{
-    height: 100%
+    height: 100%;
 }
 .el-menu-vertical-demo{
     height: 100%;
